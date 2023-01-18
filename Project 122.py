@@ -48,6 +48,7 @@ while True:
                 image=pyautogui.screenshot()
                 image=cv2.cvtColor(np.array(image),cv2.COLOR_RGB2BGR)
                 cv2.imwrite("in memory to disk.png", image)
+                print("screenshot taken")
 
             mp_draw.draw_landmarks(img, hand_landmark,
             mp_hands.HAND_CONNECTIONS, mp_draw.DrawingSpec((0,0,255),2,2),
@@ -58,7 +59,19 @@ while True:
     cv2.waitKey(1)
 
 
-
+'''
+Output
+[True, True, True, True]
+screenshot taken
+[True, True, True, True]
+screenshot taken
+...
+[True, False, True, True]
+[True, False, True, True]
+[True, False, True, True]
+[True, False, True, True]
+...
+'''
 
 
 
